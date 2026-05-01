@@ -1,0 +1,9 @@
+services:
+  bao37-web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: bao37-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
