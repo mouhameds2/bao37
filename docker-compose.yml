@@ -1,8 +1,8 @@
 services:
   bao37-web:
     build:
-      context: ./web
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: web/Dockerfile
     container_name: bao37-web
     restart: unless-stopped
     ports:
