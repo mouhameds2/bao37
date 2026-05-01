@@ -5,5 +5,13 @@ services:
       dockerfile: web/Dockerfile
     container_name: bao37-web
     restart: unless-stopped
+<<<<<<< HEAD
     ports:
       - "8080:80"
+=======
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.bao37.rule=Host(`bao37.fr`) || Host(`www.bao37.fr`)"
+      - "traefik.http.routers.bao37.entrypoints=web"
+      - "traefik.http.services.bao37.loadbalancer.server.port=80"
+>>>>>>> 0d8a86a (route bao37 via traefik)
