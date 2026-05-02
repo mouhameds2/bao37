@@ -5,5 +5,23 @@ services:
       dockerfile: web/Dockerfile
     container_name: bao37-web
     restart: unless-stopped
+    expose:
+      - "80"
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: bao37-caddy
+    restart: unless-stopped
     ports:
-      - "8080:80"
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - bao37-web
+
+volumes:
+  caddy_data:
+  caddy_config:

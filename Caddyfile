@@ -1,0 +1,4 @@
+bao37.fr, www.bao37.fr {
+    encode gzip
+    reverse_proxy bao37-web:80
+}
