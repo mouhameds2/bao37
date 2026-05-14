@@ -1,4 +1,3 @@
-cat > /docker/bao37/Caddyfile <<'EOF'
 bao37.fr, www.bao37.fr {
     encode gzip
     reverse_proxy bao37-web:80
@@ -6,6 +5,5 @@ bao37.fr, www.bao37.fr {
 
 n8n-n5am.srv1582209.hstgr.cloud {
     encode gzip
-    reverse_proxy 172.16.3.4:5678
+    reverse_proxy n8n-n5am:5678
 }
-EOF
